@@ -11,19 +11,18 @@ public class Grocery {
 
     public static void startGrocery() {
         while (true) {
-            System.out.println("\n0 - Çıkış | 1 - Ürün Ekle | 2 - Ürün Çıkar");
-            System.out.print("Seçiminiz: ");
-            String choice = scanner.nextLine();
+            System.out.println("Lütfen Seçim Yapınız! 0-Çıkış / 1- Yeni Ürün Ekle / 2 - Ürün Çıkar");
+            String secim = scanner.nextLine();
 
-            if (choice.equals("0")) {
+            if (secim.equals("0")) {
                 System.out.println("Program sonlandırıldı.");
                 break;
-            } else if (choice.equals("1")) {
-                System.out.print("Eklemek istediğiniz ürünleri girin (virgülle ayırabilirsiniz): ");
+            } else if (secim.equals("1")) {
+                System.out.print("Eklemek istediğiniz ürünleri girin (Çoklu girişleri virgülle ayırabilirsiniz): ");
                 String input = scanner.nextLine();
                 addItems(input);
-            } else if (choice.equals("2")) {
-                System.out.print("Çıkarmak istediğiniz ürünleri girin (virgülle ayırabilirsiniz): ");
+            } else if (secim.equals("2")) {
+                System.out.print("Çıkarmak istediğiniz ürünleri girin (Çoklu girişleri virgülle ayırabilirsiniz): ");
                 String input = scanner.nextLine();
                 removeItems(input);
             } else {
@@ -66,10 +65,11 @@ public class Grocery {
     }
 
     public static void printSorted() {
-        System.out.println("Güncel Liste:");
         Collections.sort(groceryList);
         for (String item : groceryList) {
             System.out.println(item);
         }
     }
+
+
 }
